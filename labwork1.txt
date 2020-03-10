@@ -26,7 +26,7 @@ head -1 /etc/fstab && tail -3 /etc/fstab
 sed -n -e '5,10p'  /etc/fstab > extract.txt
 
 7. List all files in current directory, recursively, to which the user has full permissions 
-ls -lRa
+ls -lRa | grep "^-rwx" 
 
 8. Compare two files and show percentage of similarities between them
 $ diff --unchanged-group-format='@@ %dn,%df%<' --old-group-format='' --new-group-format='' \--changed-group-format='' a.txt b.txt
