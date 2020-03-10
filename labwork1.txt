@@ -6,7 +6,7 @@ w > ~/users
 ps -ef >> ~/users 
 3. List everyone who is logged on sorted by their username
 
-users
+users | sort -n
 
 4. Count number of session each logged in user, sorted by this number in descending order
 
@@ -20,14 +20,13 @@ now you want to know the number of instances ,you can use use uniq -c
 
 5. Show content of the first and last 3 lines of the file “/etc/fstab” 
 
-head -1 /etc/fstab
-tail -3 /etc/fstab
+head -1 /etc/fstab && tail -3 /etc/fstab
 
 6. Retrieve line number 5 to 10 from the file “/etc/fstab” and write these lines into a new file “extract.txt” 
 sed -n -e '5,10p'  /etc/fstab > extract.txt
 
 7. List all files in current directory, recursively, to which the user has full permissions 
-ls -lra
+ls -lRa
 
 8. Compare two files and show percentage of similarities between them
 $ diff --unchanged-group-format='@@ %dn,%df%<' --old-group-format='' --new-group-format='' \--changed-group-format='' a.txt b.txt
