@@ -24,7 +24,7 @@ head -1 /etc/fstab
 tail -3 /etc/fstab
 
 6. Retrieve line number 5 to 10 from the file “/etc/fstab” and write these lines into a new file “extract.txt” 
-sed -n -e '3,6p'  /etc/fstab > extract.txt
+sed -n -e '5,10p'  /etc/fstab > extract.txt
 
 7. List all files in current directory, recursively, to which the user has full permissions 
 ls -lra
