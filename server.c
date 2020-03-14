@@ -58,7 +58,8 @@ int main(int argc, char *argv[])
             printf("To client: ");
 
             //Answer to client, from keyboard
-            scanf("%s", client_message);
+            //scanf("%s", client_message);
+            fgets(client_message, sizeof(client_message), stdin);
             
             //Send the message back to client
             send(clientfd, client_message, strlen(client_message),0);

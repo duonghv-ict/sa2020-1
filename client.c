@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     }
     else
     {
+        //Should not execute like that, don't using scanf
         printf("Enter hostname: ");
         scanf("%s", s);
     }
@@ -62,10 +63,12 @@ int main(int argc, char *argv[])
     while (1)
     {
         // TODO: add logics to communicate with server
-        printf("To server: ");
+        printf("To server: \n");
 
-        //Answer to server, from keyboard
-        scanf("%s", server_message);
+        //Send to server, from keyboard
+        //scanf("%s", server_message);
+        fgets(server_message, sizeof(server_message), stdin);
+        printf("This server message: %s\n",server_message);
 
         //Send the message to server
         send(sockfd, server_message, strlen(server_message), 0);
@@ -77,7 +80,8 @@ int main(int argc, char *argv[])
             printf("To server: ");
 
             //Answer to server, from keyboard
-            scanf("%s", server_message);
+            //scanf("%s", server_message);
+            fgets(server_message, sizeof(server_message), stdin);
             
             //Send the message back to server
             send(sockfd, server_message, strlen(server_message),0);
